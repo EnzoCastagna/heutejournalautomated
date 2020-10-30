@@ -6,43 +6,18 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtGui, QtWidgets, uic
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(294, 133)
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setObjectName("centralwidget")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setObjectName("pushButton")
-        self.verticalLayout.addWidget(self.pushButton)
-        self.progressBar = QtWidgets.QProgressBar(self.centralwidget)
-        self.progressBar.setProperty("value", 24)
-        self.progressBar.setObjectName("progressBar")
-        self.verticalLayout.addWidget(self.progressBar)
-        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout.addItem(spacerItem)
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 294, 29))
-        self.menubar.setObjectName("menubar")
-        self.menuFile = QtWidgets.QMenu(self.menubar)
-        self.menuFile.setObjectName("menuFile")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
-        self.actionQuit = QtWidgets.QAction(MainWindow)
-        self.actionQuit.setObjectName("actionQuit")
-        self.menuFile.addAction(self.actionQuit)
-        self.menubar.addAction(self.menuFile.menuAction())
-
-        self.retranslateUi(MainWindow)
-        self.actionQuit.triggered.connect(MainWindow.close)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+class Ui_MainWindow(QtWidgets.QMainWindow):
+    def __init__(self):
+        super(Ui_MainWindow, self).__init__() # Call the inherited classes __init__ method
+        uic.loadUi('mainwindow.ui', self) # Load the .ui file
+        self.pushButton = self.findChild(QtWidgets.QPushButton, 'pushButton')
+        self.menuFile = self.findChild(QtWidgets.QMenu, 'menuFile')
+        self.actionQuit = self.findChild(QtWidgets.QAction, 'actionQuit')
+        self.progressBar = self.findChild(QtWidgets.QProgressBar, 'progressBar')
+        self.testButton = self.findChild(QtWidgets.QPushButton, 'testButton')
+        self.show()
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
