@@ -1,19 +1,19 @@
 import sys
 from PyQt5 import QtWidgets
 import mainwindow
+from PyQt5.QtCore import QUrl
+import datetime
+
+monate = ["januar", "februar", "marz", "april", "mai", "juni", "juli","august","september","oktober","november","dezember"]
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         self.ui = mainwindow.Ui_MainWindow()
-        self.ui.testButton.clicked.connect(self.printTest)
-        self.ui.pushButton.clicked.connect(self.advanceSlider)
+        self.ui.browser.load(QUrl("https://solvingprocrastination.com/how-to-stop-procrastinating/"))
 
     def advanceSlider(self):
         self.ui.progressBar.setValue(self.ui.progressBar.value() + 1)
-    
-    def printTest(self):
-        print("Hello qt world!")
 
 app = QtWidgets.QApplication(sys.argv)
 

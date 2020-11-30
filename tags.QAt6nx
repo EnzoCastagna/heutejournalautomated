@@ -1,0 +1,10 @@
+Ui_MainWindow	mainwindow.py	/^class Ui_MainWindow(QtWidgets.QMainWindow):$/;"	c
+__init__	mainwindow.py	/^    def __init__(self):$/;"	m	class:Ui_MainWindow
+retranslateUi	mainwindow.py	/^    def retranslateUi(self, MainWindow):$/;"	m	class:Ui_MainWindow
+MainWindow	HeuteJournalAutomated.py	/^class MainWindow(QtWidgets.QMainWindow):$/;"	c
+__init__	HeuteJournalAutomated.py	/^    def __init__(self):$/;"	m	class:MainWindow
+advanceSlider	HeuteJournalAutomated.py	/^    def advanceSlider(self):$/;"	m	class:MainWindow
+printTest	HeuteJournalAutomated.py	/^    def printTest(self):$/;"	m	class:MainWindow
+url	HeuteJournalAutomated.py	/^url = "https:\/\/solvingprocrastination.com\/how-to-stop-procrastinating\/"$/;"	v
+app	HeuteJournalAutomated.py	/^app = QtWidgets.QApplication(sys.argv)$/;"	v
+my_mainWindow	HeuteJournalAutomated.py	/^my_mainWindow = MainWindow()$/;"	v
